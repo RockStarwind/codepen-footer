@@ -1,4 +1,4 @@
-var rsw_powered = {};
+var rsw_powered = rsw_powered || {};
 // My Links
 var rsw_links = [
 	{
