@@ -75,10 +75,4 @@ var rsw_html = [
 ]
 
 // Render
-setTimeout(
-	function() => {
-		document.body.insertAdjacentHTML("beforeend", rsw_html.join(""));
-	},
-	200
-);
-document.body.addEventListener("load", () => { alert("testing???"); } );
+document.body.insertAdjacentHTML("beforeend", rsw_html.join(""));
