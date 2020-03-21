@@ -53,7 +53,7 @@ var rsw_html_links = [];
 for (var i = 0; i < rsw_links.length; i++) {
 	var rsw_html_link = [
 		"<div class='rsw-link' ",
-			(rsw_links[i].powered ? "data-powered" : ""),
+			(rsw_links[i].powered ? "data-powered=''" : ""),
 			" ",
 			(rsw_links[i].id ? "id='" + rsw_links[i].id + "'" : ""),
 		">",
