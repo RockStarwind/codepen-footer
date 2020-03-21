@@ -60,7 +60,7 @@ for (var i = 0; i < rsw_links.length; i++) {
 	rsw_html_links.push(rsw_html_link.join(""));
 }
 var rsw_html = [
-	"<link href='style.css' rel='stylesheet' />",
+	"<link href='./style.css' rel='stylesheet' />",
 	"<div id='rsw-footer'>",
 	"	<div id='rsw-footer-bg'></div>",
 	"	<input id='rsw-toggle' type='checkbox' />",
