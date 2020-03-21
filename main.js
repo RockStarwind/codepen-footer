@@ -34,7 +34,8 @@ if (rsw_powered["eqcss"]) {
 		title: "<span>Powered by</span> Element Queries CSS",
 		url: "https://elementqueries.com",
 		desc: "A CSS Reprocessor for Element Queries & More",
-		powered: true
+		powered: true,
+		id: "rsw-powered-eqcss"
 	})
 }
 if (rsw_powered["cssomtools"]) {
@@ -42,7 +43,8 @@ if (rsw_powered["cssomtools"]) {
 		title: "<span>Powered by</span> CSSOMTools<span>; Created by</span> @tomhodgins",
 		url: "https://github.com/tomhodgins/cssomtools",
 		desc: "The 'jQuery-for-the-CSSOM', a library for working with CSS stylesheets and rules in the browser",
-		powered: true
+		powered: true,
+		id: "rsw-powered-cssomtools"
 	})
 }
 
@@ -50,7 +52,7 @@ if (rsw_powered["cssomtools"]) {
 var rsw_html_links = [];
 for (var i = 0; i < rsw_links.length; i++) {
 	var rsw_html_link = [
-		"<div class='rsw-link'" + (rsw_links[i].powered ? "data-powered" : "") + ">",
+		"<div class='rsw-link'" + (rsw_links[i].powered ? "data-powered" : "") + (rsw_links[i].id ? "id='" + rsw_links[i].id + "'" : "") + ">",
 		"	<a target='_new' href='" + rsw_links[i].url + "'>",
 		"		<span>" + rsw_links[i].title + "</span>",
 		"	</a>",
@@ -60,7 +62,7 @@ for (var i = 0; i < rsw_links.length; i++) {
 	rsw_html_links.push(rsw_html_link.join(""));
 }
 var rsw_html = [
-	"<link href='./style.css' rel='stylesheet' />",
+	"<link href='https://rockstarwind.github.io/codepen-footer/style.css' rel='stylesheet' />",
 	"<div id='rsw-footer'>",
 	"	<div id='rsw-footer-bg'></div>",
 	"	<input id='rsw-toggle' type='checkbox' />",
