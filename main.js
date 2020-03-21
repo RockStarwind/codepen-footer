@@ -29,6 +29,9 @@ var rsw_links = [
 ]
 
 // Powered by Links
+for (library in rsw_powered) {
+	console.log(library);
+}
 if (rsw_powered["eqcss"]) {
 	rsw_links.unshift({
 		title: "<span>Powered by</span> Element Queries CSS",
