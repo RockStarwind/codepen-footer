@@ -40,8 +40,14 @@ var rsw_links = [
 ]
 
 // Part of a series Links
-if (rsw_series.length > 0) { rsw_links.unshift(SEPARATOR); }
 for (var series in rsw_series) {
+	// Separator
+	var separator = false;
+	if (!separator) {
+		rsw_links.unshift(SEPARATOR);
+		separator = true;
+	}
+	// Series
 	series = series.toLowerCase();
 	// :has
 	if ([":has", "has"].includes(series)) {
@@ -66,8 +72,14 @@ for (var series in rsw_series) {
 }
 
 // Powered by Links
-if (rsw_powered.length > 0) { rsw_links.unshift(SEPARATOR); }
 for (var library in rsw_powered) {
+	// Separator
+	var separator = false;
+	if (!separator) {
+		rsw_links.unshift(SEPARATOR);
+		separator = true;
+	}
+	// Library
 	library = library.toLowerCase();
 	// EQCSS
 	if (library === "eqcss") {
