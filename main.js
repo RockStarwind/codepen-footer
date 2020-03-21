@@ -75,4 +75,9 @@ var rsw_html = [
 ]
 
 // Render
-document.body.insertAdjacentHTML("beforeend", rsw_html.join(""));
+setTimeout(
+	function() => {
+		document.body.insertAdjacentHTML("beforeend", rsw_html.join(""));
+	},
+	200
+);
