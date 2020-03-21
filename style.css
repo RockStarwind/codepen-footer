@@ -85,6 +85,10 @@
 	z-index: -1;
 	opacity: .75;
 }
+#rsw-footer > .rsw-menu .rsw-separator {
+	border: none;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+}
 #rsw-footer > .rsw-menu .rsw-link {
 	background-color: rgba(0, 0, 0, .5);
 	margin: 1em;
