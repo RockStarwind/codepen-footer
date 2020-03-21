@@ -1,39 +1,49 @@
 var rsw_powered = rsw_powered || {};
 var rsw_series = rsw_series || {};
 
+var SEPARATOR = {
+	separator: true
+}
+var CODEPEN = {
+	title: "Codepen",
+	url: "https://codepen.io/RockStarwind",
+	desc: ""
+};
+var TWITTER = {
+	title: "Twitter",
+	url: "https://twitter.com/RockStarwind",
+	desc: "Come for the web developer tweets, stay for the bad jokes and other nonsense."
+};
+var INSTAGRAM = {
+	title: "Instagram",
+	url: "https://instagram.com/RockStarwind",
+	desc: "My updates are more straight to the point there."
+};
+var GITHUB = 	{
+	title: "Github",
+	url: "https://github.com/RockStarwind",
+	desc: "Don't let the lack of green squares fool you. I love to code."
+};
+var KOFI = 	{
+	title: "Buy me a coffee! (Tip me!)",
+	url: "https://ko-fi.com/RockStarwind",
+	desc: "If you really like what I do, then come support it by heading over to my Ko-fi and buy me a coffee."
+}
+
 // My Links
 var rsw_links = [
-	{
-		title: "Codepen",
-		url: "https://codepen.io/RockStarwind",
-		desc: ""
-	},
-	{
-		title: "Twitter",
-		url: "https://twitter.com/RockStarwind",
-		desc: "Come for the web developer tweets, stay for the bad jokes."
-	},
-	{
-		title: "Instagram",
-		url: "https://instagram.com/RockStarwind",
-		desc: ""
-	},
-	{
-		title: "Github",
-		url: "https://github.com/RockStarwind",
-		desc: ""
-	},
-	{
-		title: "Buy me a coffee! (Tip me!)",
-		url: "https://ko-fi.com/RockStarwind",
-		desc: "If you really like what I do, then come support it by heading over to my Ko-fi and buy me a coffee."
-	}
+	CODEPEN,
+	TWITTER,
+	INSTAGRAM,
+	GITHUB,
+	KOFI
 ]
 
 // Part of a series Links
+if (rsw_series) { rsw_links.unshift(SEPARATOR); }
 for (var series in rsw_series) {
 	series = series.toLowerCase();
-	// EQCSS
+	// :has
 	if ([":has", "has"].includes(series)) {
 		rsw_links.unshift({
 			title: "<span>Part of the series:</span> Emulating :has()",
@@ -43,9 +53,20 @@ for (var series in rsw_series) {
 			id: "rsw-series-has"
 		})
 	}
+	// Fizzbuzz
+	if (["fizzbuzz"].includes(series)) {
+		rsw_links.unshift({
+			title: "<span>Part of the series:</span> Fizzbuzz &amp; related Pens",
+			url: "https://codepen.io/RockStarwind/pens/tags/?selected_tag=fizzbuzz",
+			desc: "Why do I keep making Codepens about Fizzbuzz?",
+			series: true,
+			id: "rsw-series-fizzbuzz"
+		})
+	}
 }
 
 // Powered by Links
+if (rsw_powered) { rsw_links.unshift(SEPARATOR); }
 for (var library in rsw_powered) {
 	library = library.toLowerCase();
 	// EQCSS
@@ -83,25 +104,29 @@ for (var library in rsw_powered) {
 // Loop through links, push html to rsw_html_links array.
 var rsw_html_links = [];
 for (var i = 0; i < rsw_links.length; i++) {
-	var rsw_html_link = [
-		"<div class='rsw-link' ",
-			(rsw_links[i].series ? "data-series=''" : "") + " ",
-			(rsw_links[i].powered ? "data-powered=''" : "") + " ",
-			(rsw_links[i].id ? "id='" + rsw_links[i].id + "'" : ""),
-		">",
-		"	<a target='_new' href='" + rsw_links[i].url + "'>",
-		"		<span>" + rsw_links[i].title + "</span>",
-		"	</a>",
-		"	<p>" + rsw_links[i].desc + "</p>",
-		"</div>"
-	];
+	if (rsw_links[i].separator) {
+		var rsw_html_link = ["<hr class='rsw-separator' />"];
+	} else {
+		var rsw_html_link = [
+			"<div class='rsw-link' ",
+				(rsw_links[i].series ? "data-series=''" : "") + " ",
+				(rsw_links[i].powered ? "data-powered=''" : "") + " ",
+				(rsw_links[i].id ? "id='" + rsw_links[i].id + "'" : ""),
+			">",
+			"	<a target='_new' href='" + rsw_links[i].url + "'>",
+			"		<span>" + rsw_links[i].title + "</span>",
+			"	</a>",
+			"	<p>" + rsw_links[i].desc + "</p>",
+			"</div>"
+		];
+	}
 	rsw_html_links.push(rsw_html_link.join(""));
 }
 var rsw_html = [
 	"<link href='https://rockstarwind.github.io/codepen-footer/style.css' rel='stylesheet' />",
 	"<div id='rsw-footer'>",
 	"	<div id='rsw-footer-bg'></div>",
-	"	<input class='rsw-toggle' id='rsw-toggle-main' type='checkbox' />",
+	"	<input class='rsw-toggle' id='rsw-toggle-main' type='checkbox' aria-label='' />",
 	"	<div class='rsw-menu' id='rsw-menu-main'><div class='rsw-menu-inner'>",
 	rsw_html_links.join(""),
 	"	</div></div>",
