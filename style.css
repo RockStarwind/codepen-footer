@@ -92,6 +92,9 @@
 #rsw-footer > #rsw-menu [data-powered] {
 	background-image: linear-gradient(to right, rgba(255, 128, 0, .1), transparent);
 }
+#rsw-footer > #rsw-menu [data-series] {
+	background-image: linear-gradient(to right, rgba(0, 255, 128, .1), transparent);
+}
 #rsw-footer > #rsw-menu .rsw-link a {
 	color: #B3E5FC;
 	display: block;
