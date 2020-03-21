@@ -102,7 +102,7 @@ var rsw_html = [
 	"<div id='rsw-footer'>",
 	"	<div id='rsw-footer-bg'></div>",
 	"	<input class='rsw-toggle' id='rsw-toggle-main' type='checkbox' />",
-	"	<div class='rsw-menu'><div class='rsw-menu-inner'>",
+	"	<div class='rsw-menu' id='rsw-menu-main'><div class='rsw-menu-inner'>",
 	rsw_html_links.join(""),
 	"	</div></div>",
 	"</div>"

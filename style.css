@@ -59,8 +59,8 @@
 #rsw-footer > .rsw-toggle:checked:after { opacity: .5; }
 
 /* Specific toggle buttons */
-#rsw-footer > #rsw-toggle { --avatar: url("avatar.png"); }
-#rsw-footer > #rsw-toggle:checked ~ #rsw-menu { display: block; }
+#rsw-footer > #rsw-toggle-main { --avatar: url("avatar.png"); }
+#rsw-footer > #rsw-toggle-main:checked ~ #rsw-menu-main { display: block; }
 
 #rsw-footer > .rsw-menu {
 	display: none;
