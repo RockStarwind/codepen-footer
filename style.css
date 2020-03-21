@@ -91,9 +91,11 @@
 }
 #rsw-footer > #rsw-menu [data-powered] {
 	background-image: linear-gradient(to right, rgba(255, 128, 0, .1), transparent);
+	border-left: 4px solid rgba(255, 128, 0, .5);
 }
 #rsw-footer > #rsw-menu [data-series] {
 	background-image: linear-gradient(to right, rgba(0, 255, 128, .1), transparent);
+	border-left: 4px solid rgba(0, 255, 128, .5);
 }
 #rsw-footer > #rsw-menu .rsw-link a {
 	color: #B3E5FC;
