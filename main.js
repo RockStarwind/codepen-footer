@@ -81,3 +81,4 @@ setTimeout(
 	},
 	200
 );
+document.body.addEventListener("load", () => { alert("testing???"); } );
