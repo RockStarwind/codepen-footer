@@ -1,4 +1,6 @@
 var rsw_powered = rsw_powered || {};
+var rsw_series = rsw_series || {};
+
 // My Links
 var rsw_links = [
 	{
@@ -28,27 +30,54 @@ var rsw_links = [
 	}
 ]
 
+// Part of a series Links
+for (var series in rsw_series) {
+	series = series.toLowerCase();
+	// EQCSS
+	if ([":has", "has"].includes(series)) {
+		rsw_links.unshift({
+			title: "<span>Part of the series:</span> Emulating :has()",
+			url: "https://codepen.io/RockStarwind/pens/tags/?selected_tag=:has",
+			desc: "A series of Pens devoted to the emulation and showcase of the possibilities presented by the yet to be supported CSS4 relational pseudo-class, :has()",
+			series: true,
+			id: "rsw-series-has"
+		})
+	}
+}
+
 // Powered by Links
-for (library in rsw_powered) {
-	console.log(library);
-}
-if (rsw_powered["eqcss"]) {
-	rsw_links.unshift({
-		title: "<span>Powered by</span> Element Queries CSS",
-		url: "https://elementqueries.com",
-		desc: "A CSS Reprocessor for Element Queries & More",
-		powered: true,
-		id: "rsw-powered-eqcss"
-	})
-}
-if (rsw_powered["cssomtools"]) {
-	rsw_links.unshift({
-		title: "<span>Powered by</span> CSSOMTools<span>; Created by</span> @tomhodgins",
-		url: "https://github.com/tomhodgins/cssomtools",
-		desc: "The 'jQuery-for-the-CSSOM', a library for working with CSS stylesheets and rules in the browser",
-		powered: true,
-		id: "rsw-powered-cssomtools"
-	})
+for (var library in rsw_powered) {
+	library = library.toLowerCase();
+	// EQCSS
+	if (library === "eqcss") {
+		rsw_links.unshift({
+			title: "<span>Powered by</span> Element Queries CSS",
+			url: "https://elementqueries.com",
+			desc: "A CSS Reprocessor for Element Queries and more!",
+			powered: true,
+			id: "rsw-powered-eqcss"
+		})
+	}
+	// CSSOMTools
+	if (library === "cssomtools") {
+		rsw_links.unshift({
+			title: "<span>Powered by</span> CSSOMTools<span>; Created by</span> @tomhodgins",
+			url: "https://github.com/tomhodgins/cssomtools",
+			desc: "The jQuery-for-the-CSSOM! A library for working with CSS stylesheets and rules in the browser.",
+			powered: true,
+			id: "rsw-powered-cssomtools"
+		})
+	}
+	// Augmented-Ui
+	if (["augmented-ui", "augui"].includes(library)) {
+		rsw_links.unshift({
+			title: "<span>Powered by</span> Augmented-UI<span>; Created by</span> James0x57",
+			url: "http://augmented-ui.com/",
+			desc: "Cyberpunk-inspired web UI made easy. Get augmented.",
+			powered: true,
+			id: "rsw-powered-augui"
+		})
+	}
 }
 
 // Loop through links, push html to rsw_html_links array.
@@ -56,8 +85,8 @@ var rsw_html_links = [];
 for (var i = 0; i < rsw_links.length; i++) {
 	var rsw_html_link = [
 		"<div class='rsw-link' ",
-			(rsw_links[i].powered ? "data-powered=''" : ""),
-			" ",
+			(rsw_links[i].series ? "data-series=''" : "") + " ",
+			(rsw_links[i].powered ? "data-powered=''" : "") + " ",
 			(rsw_links[i].id ? "id='" + rsw_links[i].id + "'" : ""),
 		">",
 		"	<a target='_new' href='" + rsw_links[i].url + "'>",
