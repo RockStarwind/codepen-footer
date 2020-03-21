@@ -40,7 +40,7 @@ var rsw_links = [
 ]
 
 // Part of a series Links
-if (rsw_series) { rsw_links.unshift(SEPARATOR); }
+if (rsw_series.length > 0) { rsw_links.unshift(SEPARATOR); }
 for (var series in rsw_series) {
 	series = series.toLowerCase();
 	// :has
@@ -66,7 +66,7 @@ for (var series in rsw_series) {
 }
 
 // Powered by Links
-if (rsw_powered) { rsw_links.unshift(SEPARATOR); }
+if (rsw_powered.length > 0) { rsw_links.unshift(SEPARATOR); }
 for (var library in rsw_powered) {
 	library = library.toLowerCase();
 	// EQCSS
