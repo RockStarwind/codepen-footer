@@ -116,4 +116,5 @@
 #rsw-footer > #rsw-menu > #rsw-menu-inner {
 	overflow-x: hidden;
 	overflow-y: auto;
+	max-height: 100%;
 }
