@@ -126,7 +126,7 @@ var rsw_html = [
 	"<link href='https://rockstarwind.github.io/codepen-footer/style.css' rel='stylesheet' />",
 	"<div id='rsw-footer'>",
 	"	<div id='rsw-footer-bg'></div>",
-	"	<input class='rsw-toggle' id='rsw-toggle-main' type='checkbox' aria-label='' />",
+	"	<input class='rsw-toggle' id='rsw-toggle-main' type='checkbox' aria-label='Follow @RockStarwind' />",
 	"	<div class='rsw-menu' id='rsw-menu-main'><div class='rsw-menu-inner'>",
 	rsw_html_links.join(""),
 	"	</div></div>",
