@@ -11,7 +11,7 @@ var rsw_links = [
 	{
 		title: "Twitter",
 		url: "https://twitter.com/RockStarwind",
-		desc: ""
+		desc: "Come for the web developer tweets, stay for the bad jokes."
 	},
 	{
 		title: "Instagram",
@@ -26,7 +26,7 @@ var rsw_links = [
 	{
 		title: "Buy me a coffee! (Tip me!)",
 		url: "https://ko-fi.com/RockStarwind",
-		desc: ""
+		desc: "If you really like what I do, then come support it by heading over to my Ko-fi and buy me a coffee."
 	}
 ]
 
@@ -101,12 +101,10 @@ var rsw_html = [
 	"<link href='https://rockstarwind.github.io/codepen-footer/style.css' rel='stylesheet' />",
 	"<div id='rsw-footer'>",
 	"	<div id='rsw-footer-bg'></div>",
-	"	<input id='rsw-toggle' type='checkbox' />",
-	"	<div id='rsw-menu'>",
-	"		<div id='rsw-menu-inner'>",
+	"	<input class='rsw-toggle' id='rsw-toggle-main' type='checkbox' />",
+	"	<div class='rsw-menu'><div class='rsw-menu-inner'>",
 	rsw_html_links.join(""),
-	"		</div>",
-	"	</div>",
+	"	</div></div>",
 	"</div>"
 ]
 
