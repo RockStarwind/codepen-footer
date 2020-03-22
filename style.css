@@ -26,7 +26,7 @@
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	background-image: var(--avatar, url());
+	background-image: var(--avatar, none);
 	background-position: center center;
 	background-size: contain;
 	border-radius: 50%;
