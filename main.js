@@ -36,7 +36,6 @@ var rsw_links = [
 	TWITTER,
 	INSTAGRAM,
 	GITHUB,
-	KOFI
 ]
 
 // Part of a series Links
